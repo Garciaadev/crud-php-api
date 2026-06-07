@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  php:
+    build: .
+    container_name: crud_php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - crud_net
+
+  mysql:
+    image: mysql:8.0
+    container_name: crud_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: crud_db
+      MYSQL_USER: crud_user
+      MYSQL_PASSWORD: crud_pass
+    volumes:
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - crud_net
+
+networks:
+  crud_net:
+    driver: bridge
