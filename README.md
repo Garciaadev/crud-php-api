@@ -72,3 +72,10 @@ crud-php/
 - PHP 8.1 + Apache
 - MySQL 8.0
 - Docker + Docker Compose
+
+
+
+## Colaboradores
+
+- [Garciaadev](https://github.com/Garciaadev) — Owner
+- [garciaadevAlejandro](https://github.com/garciaadevAlejandro) — Colaborador
