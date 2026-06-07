@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS productos (
     descripcion TEXT,
     precio DECIMAL(10,2) NOT NULL,
     stock INT DEFAULT 0,
+    categoria VARCHAR(50) DEFAULT 'general',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
