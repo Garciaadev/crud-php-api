@@ -13,6 +13,13 @@ switch ($method) {
 
     // READ - GET /api.php o GET /api.php?id=1
     case 'GET':
+        if (isset($_GET['categoria'])) {
+            $cat = $conn->real_escape_string($_GET['categoria']);
+            $result = $conn->query("SELECT * FROM productos WHERE categoria = '$cat'");
+            $productos = $result->fetch_all(MYSQLI_ASSOC);
+            echo json_encode($productos);
+            break;
+        }
         if ($id) {
             $stmt = $conn->prepare("SELECT * FROM productos WHERE id = ?");
             $stmt->bind_param("i", $id);
