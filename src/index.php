@@ -51,7 +51,7 @@
     <table id="tabla">
         <thead>
             <tr>
-                <th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Stock</th><th>Acciones</th>
+                <th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Stock</th><th>Categoría</th><th>Acciones</th>
             </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -71,6 +71,7 @@
                     <td>${p.descripcion || '-'}</td>
                     <td>${parseFloat(p.precio).toFixed(2)} €</td>
                     <td>${p.stock}</td>
+                    <td>${p.categoria || '-'}</td>
                     <td>
                         <button class="btn btn-edit" onclick="editar(${p.id},'${p.nombre}','${p.descripcion}',${p.precio},${p.stock})">Editar</button>
                         <button class="btn btn-delete" onclick="eliminar(${p.id})">Eliminar</button>
